@@ -1,0 +1,18 @@
+import bs4 as bs
+import urllib.request
+kaynak=urllib.request.urlopen('https://www.takvim.com.tr/guncel').read()
+sayfa=bs.BeautifulSoup(kaynak,'lxml')
+#print(sayfa.findAll('span'))
+for paragraf in sayfa.findAll('span'):
+    print(paragraf.string)
+
+
+
+
+#import bs4 as bs
+#import urllib.request
+#kaynak=urllib.request.urlopen('https://www.takvim.com.tr/guncel').read()
+#sayfa=bs.BeautifulSoup(kaynak,'lxml')
+#print(sayfa.findAll('span'))
+#for paragraf in sayfa.findAll('span'):
+    #print(paragraf.string)
